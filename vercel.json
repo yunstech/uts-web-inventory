@@ -8,6 +8,13 @@
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
+        },
+        {
+            "src": "/build/(.*)",
+            "dest": "/build/$1",
+            "headers": {
+                "Cache-Control": "public, max-age=31536000, immutable"
+            }
         }
     ],
     "env": {
@@ -15,14 +22,12 @@
         "APP_DEBUG": "true",
         "APP_URL": "https://uts-web-inventory.vercel.app",
         "APP_KEY": "base64:Rsc2bh1xK2o1mclipwXA0o2FdxjT6PJ27rlx+afhLJ0=",
-
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
         "APP_ROUTES_CACHE": "/tmp/routes.php",
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "VIEW_COMPILED_PATH": "/tmp",
-
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"
